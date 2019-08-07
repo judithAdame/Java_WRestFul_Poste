@@ -1,12 +1,13 @@
 package com.latino.modele;
 
-import java.io.Serializable;
+//import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class Poste implements Serializable {
+//public class Poste implements Serializable {
+public class Poste {
     private int id;
     private String nom;
     private String langages;

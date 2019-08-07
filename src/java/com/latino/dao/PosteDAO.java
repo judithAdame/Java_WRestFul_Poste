@@ -1,7 +1,8 @@
 package com.latino.dao;
 
 import com.latino.modele.Poste;
-import com.latino.utilitarie.DataManagerOracle;
+import com.latino.utilitarie.DataManagerMySQL;
+//import com.latino.utilitarie.DataManagerOracle;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,7 +17,7 @@ public class PosteDAO {
         int res =0;
         try {
             String requete =  "INSERT INTO poste (nom, courriel, langages) VALUES (?,?,?)";
-            PreparedStatement stm = DataManagerOracle.getConnexion().prepareStatement(requete);
+            PreparedStatement stm = DataManagerMySQL.getConnexion().prepareStatement(requete);
             stm.setString(1, poste.getNom());
             stm.setString(2, poste.getCourriel());
             stm.setString(3, poste.getLangages());
@@ -32,7 +33,7 @@ public class PosteDAO {
         if (isPoste(id)) {
             try {
                 String requete = "UPDATE poste SET Nom=?,Courriel=?, Langages=? WHERE Id=?";
-                PreparedStatement stm = DataManagerOracle.getConnexion().prepareStatement(requete);
+                PreparedStatement stm = DataManagerMySQL.getConnexion().prepareStatement(requete);
                 stm.setString(1, poste.getNom());
                 stm.setString(2, poste.getCourriel());
                 stm.setString(3, poste.getLangages());
@@ -50,7 +51,7 @@ public class PosteDAO {
         if (isPoste(id)) {
             try {
                 String requete = "DELETE FROM poste WHERE id=?";
-                PreparedStatement stm = DataManagerOracle.getConnexion().prepareStatement(requete);
+                PreparedStatement stm = DataManagerMySQL.getConnexion().prepareStatement(requete);
                 stm.setInt(1, id);
                 res = stm.executeUpdate();
             } catch (SQLException ex) {
@@ -64,7 +65,7 @@ public class PosteDAO {
         List<Poste> postes = new ArrayList();
         try {
             String requete =  "SELECT id, nom, courriel, langages FROM POSTE";
-            Statement stm = DataManagerOracle.getConnexion().createStatement();
+            Statement stm = DataManagerMySQL.getConnexion().createStatement();
             ResultSet resultats = stm.executeQuery(requete);
             Poste p;
             while (resultats.next()) {
@@ -86,7 +87,7 @@ public class PosteDAO {
         if (isPoste(id)) {
             try {
                 String requete = "SELECT ID, NOM, COURRIEL, LANGAGES FROM poste WHERE ID=?";
-                PreparedStatement stm = DataManagerOracle.getConnexion().prepareStatement(requete);
+                PreparedStatement stm = DataManagerMySQL.getConnexion().prepareStatement(requete);
                 stm.setInt(1, id);
                 ResultSet resultats = stm.executeQuery();
                 if (resultats.next()) {
@@ -106,7 +107,7 @@ public class PosteDAO {
     private static boolean isPoste(int id){
         try {
             String requete = "SELECT ID, NOM, COURRIEL, LANGAGES FROM poste WHERE ID=?";
-            PreparedStatement stm = DataManagerOracle.getConnexion().prepareStatement(requete);
+            PreparedStatement stm = DataManagerMySQL.getConnexion().prepareStatement(requete);
             stm.setInt(1, id);
             ResultSet resultats = stm.executeQuery();
             if (resultats.next()) {
@@ -122,7 +123,7 @@ public class PosteDAO {
         List<Poste> postes = new ArrayList();
         try {
             String requete =  "SELECT ID, NOM, COURRIEL, LANGAGES FROM POSTE";
-            Statement stm = DataManagerOracle.getConnexion().createStatement();
+            Statement stm = DataManagerMySQL.getConnexion().createStatement();
             ResultSet resultats = stm.executeQuery(requete);
             Poste p;
             while (resultats.next()) {

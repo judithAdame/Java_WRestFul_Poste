@@ -1,9 +1,5 @@
 package com.latino.modele;
 
-//import javax.xml.bind.annotation.XmlRootElement;
-//
-//@XmlRootElement
-//public class Poste implements Serializable {
 public class Poste {
     private int id;
     private String nom;

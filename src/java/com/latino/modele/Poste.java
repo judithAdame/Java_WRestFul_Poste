@@ -1,11 +1,8 @@
 package com.latino.modele;
 
-//import java.io.Serializable;
-import java.util.Arrays;
-import java.util.List;
-import javax.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement
+//import javax.xml.bind.annotation.XmlRootElement;
+//
+//@XmlRootElement
 //public class Poste implements Serializable {
 public class Poste {
     private int id;
@@ -48,40 +45,5 @@ public class Poste {
     @Override
     public String toString() {
         return "Poste{" + "id=" + id + ", nom=" + nom + ", langages=" + langages + ", courriel=" + courriel + '}';
-    }
-
-    public boolean isMatch(int nbMath, String postulants) {
-        int i=0;
-        List<String> lPostulants = Arrays.asList(postulants.split(","));
-        List<String> lPostes = Arrays.asList(this.getLangages().split(","));
-        nbMath = validerNbMatch(nbMath, lPostulants.size(), lPostes.size());
-        if (nbMath == -1) 
-                return false;
-        for (String lposte: lPostes) {
-            lposte = lposte.toUpperCase().trim();
-            for (String lpostulant: lPostulants) {
-                lpostulant = lpostulant.toUpperCase().trim();
-                if (lposte.equals(lpostulant)) {
-                    i++;
-                }
-            }
-        }        
-        return ((i>=nbMath));
-    }
-    
-    private int validerNbMatch(int nb, int nbPostulants, int nbPoste){
-        int nbValide = -1;
-        if (nb<0) {
-            nbValide = -1;
-        }
-        else if (nb>nbPostulants){
-            nbValide =nbPostulants;
-        }
-        else if (nb>nbPoste){
-            nbValide = -1;
-        }
-        else 
-            nbValide = nb;
-        return nbValide;
     }
 }

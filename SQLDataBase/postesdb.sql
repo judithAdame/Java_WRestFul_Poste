@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 02, 2019 at 03:40 PM
+-- Generation Time: Aug 07, 2019 at 02:56 AM
 -- Server version: 5.7.11
 -- PHP Version: 5.6.18
 
@@ -27,10 +27,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `poste` (
-  `id` int(5) NOT NULL,
-  `nom` varchar(20) NOT NULL,
-  `langages` varchar(100) NOT NULL,
-  `courriel` varchar(30) NOT NULL
+  `id` int(11) NOT NULL,
+  `nom` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `langages` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `courriel` varchar(30) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -41,9 +41,8 @@ INSERT INTO `poste` (`id`, `nom`, `langages`, `courriel`) VALUES
 (2, 'Devellopeur Java', 'Java, J2EE', 'java@gmail.com'),
 (3, 'Dev Front-end', 'pascal, cobol', 'dev@gmail.com'),
 (4, 'Dev Back-end', 'CSS, HTML, BOOTSCRAP', 'java@gmail.com'),
-(5, 'Devellopeur Java', 'JaVa, CsHarp,   js', 'abc@gmail.com'),
-(6, 'Devellopeur Java', 'JaVa,   Nodejs, js', 'abc@gmail.com'),
-(7, 'Devellopeur Java', 'JaVa, CsHarp,   Nodejs', 'abc@gmail.com');
+(6, 'Devellopeur Java', 'JaVa, Nodejs, js', 'abc@gmail.com'),
+(7, 'Devellopeur Java', 'JaVa, CsHarp, Nodejs', 'abc@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +62,7 @@ ALTER TABLE `poste`
 -- AUTO_INCREMENT for table `poste`
 --
 ALTER TABLE `poste`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

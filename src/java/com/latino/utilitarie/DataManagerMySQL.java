@@ -19,10 +19,7 @@ public class DataManagerMySQL {
                 Class.forName(driver);
                 cnx = DriverManager.getConnection(url, user, password);
             }
-        } catch (SQLException ex) {
-            System.out.println("ERREUR : "+ex);
-            Logger.getLogger(DataManagerMySQL.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+        } catch (SQLException | ClassNotFoundException ex) {
             System.out.println("ERREUR : "+ex);
             Logger.getLogger(DataManagerMySQL.class.getName()).log(Level.SEVERE, null, ex);
         }

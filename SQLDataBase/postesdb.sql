@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 07, 2019 at 02:56 AM
+-- Generation Time: Aug 07, 2019 at 07:18 PM
 -- Server version: 5.7.11
 -- PHP Version: 5.6.18
 
@@ -42,7 +42,9 @@ INSERT INTO `poste` (`id`, `nom`, `langages`, `courriel`) VALUES
 (3, 'Dev Front-end', 'pascal, cobol', 'dev@gmail.com'),
 (4, 'Dev Back-end', 'CSS, HTML, BOOTSCRAP', 'java@gmail.com'),
 (6, 'Devellopeur Java', 'JaVa, Nodejs, js', 'abc@gmail.com'),
-(7, 'Devellopeur Java', 'JaVa, CsHarp, Nodejs', 'abc@gmail.com');
+(7, 'Devellopeur Java', 'JaVa, CsHarp, Nodejs', 'abc@gmail.com'),
+(10, 'Dev Expert', 'C++, java, js', 'devExperte@gmail.com'),
+(11, 'Dev Intermediaire', 'C#, html, ajax, jquery', 'devIntermediaire@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -62,7 +64,7 @@ ALTER TABLE `poste`
 -- AUTO_INCREMENT for table `poste`
 --
 ALTER TABLE `poste`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
